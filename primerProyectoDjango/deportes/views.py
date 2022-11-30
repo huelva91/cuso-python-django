@@ -36,3 +36,10 @@ def listar_selecciones(request):
 
 def anadir_selecciones(request):
     return render(request, "anadir_selecciones.html")
+
+def diccionario_nuevas_selecciones(request):
+    nombre = request.POST["name"]
+    continente = request.POST["continente"]
+    num_mundiales = request.POST["nummundiales"]
+    nueva_seleccion = {'nombre': nombre, 'contiente': continente, 'num_mundiales': num_mundiales }
+    return nueva_seleccion
