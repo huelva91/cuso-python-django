@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Anadir Selecciones</title>
 </head>
 <body>
+
+<h1>Anadir Selecciones</h1>
+
+<form action="anadir_selecciones" method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    <div>
+        <label for="name">Nombre Seleccion</label>
+        <input type="text" name="name" id="name" required>
+
+
+        <label>Continente: <input type="text" name="continente" list="continentes"/>
+            <datalist id="continentes">
+                {% for continente in listado_continentes %}
+                <option value="{{continente}}"></option>
+                {% endfor %}
+            </datalist>
+        </label>
+
+        <label for="nummundiales">Numero Mundiales</label>
+        <input type="text" name="nummundiales" id="nummundiales" required>
+
+        <button type="button" onclick="history.back()">Volver</button>
+        <button type="submit">Anadir</button>
+    </div>
+</form>
 
 </body>
 </html>

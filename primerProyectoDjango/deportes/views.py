@@ -33,3 +33,6 @@ def listar_selecciones(request):
                 "listado_continentes": ["Europa", "America", "Asia", "Africa", "Oceania"]}
 
     return render(request, "listado_selecciones_mundial.html", contexto)
+
+def anadir_selecciones(request):
+    return render(request, "anadir_selecciones.html")
